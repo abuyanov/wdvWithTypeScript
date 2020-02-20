@@ -3,20 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <title> Sample Wdv Project</title>
-    <script data-main="app" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
-    <script>
-        requirejs.config({
-            baseUrl: 'node_modules',
-            paths: {
-                'jquery': 'jquery/dist/jquery.min',
-                'jquery-ui': 'jquery-ui-dist/jquery-ui.min',
-                'raphael': 'raphael/raphael.min',
-                'clipboard': 'clipboard/dist/clipboard.min',
-                'web-document-viewer': 'web-document-viewer/atalaWebDocumentViewer',
-                'app': '../app'
-            }
-        });
-</script>
+
+    <link href="node_modules/jquery-ui-dist/jquery-ui.min.css" rel="stylesheet" />
+    <link href="node_modules/web-document-viewer/atalaWebDocumentViewer.css" rel="stylesheet" />
+
+    <script data-main="main" src="node_modules/requirejs/require.js"></script>
+    
 </head>
 <body>
 <h1>Kofax Web Document Viewer Demo</h1>
@@ -33,10 +25,14 @@
     
         <div style="padding: 3px; margin: 4px 0 4px 0;">
             <div class="atala-document-toolbar" style="width: 800px;"></div>
-            <div class="atala-document-container" id="atalaviewer" style="width: 800px; height: 600px;"></div>
+            <div class="atala-document-container" id="viewer" style="width: 800px; height: 600px;"></div>
         </div>
     
-        <div id="status"></div>
+        <div>
+            <h4>Status:</h4>
+            <div id="status"></div>
+        </div>
+        
     </div>
     
 </form>

@@ -1,10 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
     <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\saved\Test.pdf" />
+    <Content Remove="wwwroot\saved\Test.xmp" />
+    <Content Remove="wwwroot\uploaded\elephant_Wikipedia.pdf" />
+    <Content Remove="wwwroot\uploaded\fivepages - Copy.tif" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Atalasoft.dotImage.WebControls.Core.x86" Version="11.2.0.1267" />
@@ -14,6 +21,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\saved\" />
+    <Folder Include="wwwroot\uploaded\" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -29,6 +38,7 @@
     <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptMapRoot />
+    <TypeScriptModuleResolution>Node</TypeScriptModuleResolution>
     <TypeScriptSourceRoot />
   </PropertyGroup>
 
